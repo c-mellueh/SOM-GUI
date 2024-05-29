@@ -1,8 +1,6 @@
 from __future__ import annotations
 
-from PySide6.QtGui import QPalette
 from PySide6.QtWidgets import QMainWindow, QTableWidget, QLabel, QApplication
-from PySide6.QtCore import Qt
 from SOMcreator import classes
 
 import som_gui
@@ -28,9 +26,6 @@ from som_gui.core import main_window as core
 class MainWindow(QMainWindow):
     def __init__(self, application: QApplication):
         super(MainWindow, self).__init__()
-        palette = self.palette()
-        palette.setColor(QPalette.Window, Qt.GlobalColor.white)
-        self.setPalette(palette)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.app: QApplication = application
